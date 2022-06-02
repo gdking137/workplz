@@ -44,11 +44,28 @@ public class playermovement : MonoBehaviour
         isGrounded = Physics2D.OverlapCircle(footPosition, 0.1f, groundLayer);
 
 
+        if(rigid2D.velocity.y >= 1 && isGrounded == false)
+        {
+            anim.SetBool("isJumping", true);
+        }
+        else
+        {
+            anim.SetBool("isJumping", false);
+        }
+        if (rigid2D.velocity.y < 0.01f && isGrounded == false)
+        {
+            anim.SetBool("isFalling", true);
+        }
+        else
+        {
+            anim.SetBool("isFalling", false);
+        }
 
 
         if (isGrounded == true && rigid2D.velocity.y <= 0)
         {
             currentJumpCount = maxJumpCount;
+            anim.SetBool("isFalling", false);
         }
 
 
@@ -67,6 +84,7 @@ public class playermovement : MonoBehaviour
     public void Move(float x)
     {
         rigid2D.velocity = new Vector2(x * speed, rigid2D.velocity.y);
+        anim.SetFloat("Speed", Mathf.Abs(x));
     }
 
 
