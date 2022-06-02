@@ -38,7 +38,7 @@ public class playerController : MonoBehaviour
             playermovement.isLongJump = false; 
         }
     
-        
+
     
     }
 

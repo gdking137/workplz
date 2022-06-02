@@ -52,7 +52,7 @@ public class playermovement : MonoBehaviour
         {
             anim.SetBool("isJumping", false);
         }
-        if (rigid2D.velocity.y < 0.01f && isGrounded == false)
+        if (rigid2D.velocity.y < 0.1f && isGrounded == false)
         {
             anim.SetBool("isFalling", true);
         }

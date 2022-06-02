@@ -11,8 +11,6 @@ public class EnemyMove : MonoBehaviour
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
-        Think();
-
 
         //give time for think() so cpu doesnt collapse
         Invoke("Think", 5);
@@ -22,6 +20,9 @@ public class EnemyMove : MonoBehaviour
     void FixedUpdate()
     {
         rigid.velocity = new Vector2 (nextMove, rigid.velocity.y);
+
+
+
     }
 
 
