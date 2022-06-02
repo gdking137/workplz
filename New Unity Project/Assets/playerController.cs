@@ -38,10 +38,6 @@ public class playerController : MonoBehaviour
         playermovement.Move(x);
           
         ///damage
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(20);
-        }
 
 
         if (Input.GetKeyDown(KeyCode.Space))
