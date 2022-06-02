@@ -77,6 +77,7 @@ public class playermovement : MonoBehaviour
         if (isGrounded == true)
         {
             rigid2D.velocity = Vector2.up * jumpForce;
+
         }
 
         if (currentJumpCount > 0)
